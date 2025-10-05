@@ -1,14 +1,25 @@
- import React from 'react'
- 
- const App = () => {
-   return (
-     <div>
-       <h1 className='text-blue-700 text-3xl font-bold '>Mern Blog</h1>
-       <p className='text-gray-700'>Welcome to the Mern Blog!</p>
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Signin from "./pages/Signin";
+import SingUp from "./pages/SingUp";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
 
-     </div>
-   )
- }
- 
- export default App
- 
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/sign-in" element={<Signin />} />
+        <Route path="/sign-up" element={<SingUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/projects" element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
